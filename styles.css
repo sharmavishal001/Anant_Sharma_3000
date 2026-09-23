@@ -1,6 +1,6 @@
 :root {
-  --bg: #fff3f6;
-  --bg-strong: #f8dfe6;
+  --bg: #f6dde4;
+  --bg-strong: #f1c8d6;
   --panel: rgba(255, 255, 255, 0.78);
   --card: rgba(255, 255, 255, 0.82);
   --text: #2f221f;
@@ -27,8 +27,8 @@ html {
 body {
   margin: 0;
   background:
-    radial-gradient(circle at top, rgba(245, 190, 200, 0.35), transparent 30%),
-    linear-gradient(180deg, #fff3f5 0%, #fbe9ef 32%, #fffaf8 100%);
+    radial-gradient(circle at top, rgba(239, 173, 191, 0.42), transparent 30%),
+    linear-gradient(180deg, #f7dfe6 0%, #f3d6df 32%, #fffaf8 100%);
   color: var(--text);
   font-family: "Inter", "Segoe UI", sans-serif;
   line-height: 1.7;
@@ -58,8 +58,34 @@ button {
 }
 
 .page-shell {
+  position: relative;
   width: min(1220px, calc(100% - 2rem));
   margin: 0 auto;
+}
+
+.decor-hearts {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.heart-deco {
+  position: absolute;
+  font-size: clamp(1.1rem, 2vw, 1.5rem);
+  color: rgba(199, 93, 105, 0.5);
+  text-shadow: 0 8px 20px rgba(199, 93, 105, 0.12);
+  animation: heart-drift 12s ease-in-out infinite alternate;
+}
+
+.heart-1 { top: 8%; left: 2%; }
+.heart-2 { top: 18%; right: 6%; animation-delay: 0.7s; }
+.heart-3 { top: 48%; left: 5%; animation-delay: 1.2s; }
+.heart-4 { top: 72%; right: 9%; animation-delay: 1.6s; }
+.heart-5 { top: 92%; left: 50%; animation-delay: 2s; }
+
+@keyframes heart-drift {
+  0% { transform: translateY(0) scale(1); opacity: 0.45; }
+  100% { transform: translateY(-10px) scale(1.08); opacity: 0.8; }
 }
 
 .topbar {
